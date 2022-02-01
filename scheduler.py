@@ -11,8 +11,8 @@ if __name__ == "__main__":
 
     query = text(sql)
     raw_data = pd.read_sql_query(query, cnx)
-
-    new_dict = {'listing_id': raw_data.tail(1).iloc[0][0],'added_date': datetime.datetime.now()}
+    
+    new_dict = {'listing_id': raw_data.tail(1).iloc[0][0]+1,'added_date': datetime.datetime.now()}
 
     raw_data = raw_data.append(new_dict, ignore_index = True)
 
