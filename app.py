@@ -5,7 +5,7 @@ import datetime
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://sqwmtyaiabsiff:7ecca47616bef71798632076ef45a52d3fba58691acbda0766f04bdd87d0155e@ec2-3-222-49-168.compute-1.amazonaws.com:5432/dcr89i9f2cnh2l'
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("POSTGRE")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config['SECRET_KEY'] = 'mysecretkey'
 
